@@ -1,0 +1,6 @@
+[submodule "ThirdParty/SupercellFlash"]
+	path = ThirdParty/SupercellFlash
+	url = https://github.com/scwmake/SupercellFlash
+[submodule "ThirdParty/OpenCV"]
+	path = ThirdParty/OpenCV
+	url = https://github.com/Daniil-SV/OpenCV-Binaries
