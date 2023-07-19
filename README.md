@@ -30,5 +30,5 @@ Index | Compression | Description
 3 | ZSTD | Used by default best for most of sc
 ### Skip Folder Select 
 If true when decoding skip folder select and do same as if you just close it 
-### Skip Save File Select
+### Skip Save Select
 Same but for encoding and for out path selection
