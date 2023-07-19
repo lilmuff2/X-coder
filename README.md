@@ -12,7 +12,7 @@ Put Xcoder.exe and [cv2 dll](https://github.com/Daniil-SV/OpenCV-Binaries/raw/ma
 #### Encode:
 1. Select folder with pngs, folder must contain only those png files that will be in the final sc, and should preferably have a data.json file
 2. Wait some time while textures are encoding it is quet long, but you can put false in data.json file in "UseKronos" then it'll be a lot faster
-3. Select out file path or close select dialog to save file in pngs
+3. Select out file path or close select dialog to save file in pngs folder
 4. Done! you can put your sc in game files
 ###### Data.json file:
 This file stores texture information, it is recommended not to change anything except "IsKronos", but note that "IsKronos: true" only works with 50+ version of Brawl Stars.
@@ -27,7 +27,7 @@ Index | Compression | Description
 --- | --- | ---
 1 | LZMA | Compresses large files, like ui well enough
 2 | LZHAM | IDK Just dont use it
-3 | ZSTD | Used by default best for most of sc
+3 | ZSTD | Used by default best for most of sc, used by supercell
 ### Skip Folder Select 
 If true when decoding skip folder select and do same as if you just close it 
 ### Skip Save Select
