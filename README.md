@@ -24,25 +24,25 @@ Example of data.json file:
  {
   "Downscaling": true,
   "Filter": 0,
-  "IsKronos": true,
+  "IsKhronos": true,
   "Linear": true,
   "PixelFormat": 0
  },
  {
   "Downscaling": true,
   "Filter": 0,
-  "IsKronos": true,
+  "IsKhronos": true,
   "Linear": true,
   "PixelFormat": 0
  }
 ]
 ```
-###### IsKronos:
+###### IsKhronos:
 Just a bool that says whether to use the new texture type. If used, the output file weighs much less and has a positive effect on game optimization. But encode will take many times longer.
 In fact it's just ktx in sc
 
 Example with ui_highres_tex and ZSTD compresion :
-IsKronos | encode time(seconds) | save time(seconds)  | file size
+IsKhronos | encode time(seconds) | save time(seconds)  | file size
 ---|---|---|---
 true | 137.5 | 7.798 | 13.8 MB
 false | 1.112 | 19.605 | 22,8 MB
