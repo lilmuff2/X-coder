@@ -65,7 +65,7 @@ Index | Compression | Description
 2 | LZHAM | IDK Just dont use it
 3 | ZSTD | Used by default, best for most of sc, used by supercell
 ### Skip Folder Select 
-If true when decoding skip folder select and do same as if you just close it 
+If true, when decoding, skip folder select and do same as if you just close it 
 ### Skip Save Select
 Same but for encoding and for out path selection
 
