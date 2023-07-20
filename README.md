@@ -46,7 +46,7 @@ IsKhronos | encode time(seconds) | save time(seconds)  | file size
 ---|---|---|---
 true | 137.5 | 7.798 | 13.8 MB
 false | 1.112 | 19.605 | 22,8 MB
-
+> I recomend you not to use it while testing your mod and use it in release version
 ## Config.json file:
 The file is created when the script is run for the first time and stores the settings.
 Default config.json file:
