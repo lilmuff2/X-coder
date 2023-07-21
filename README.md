@@ -2,7 +2,7 @@
 Tool to decode and encode sc files from supercell games (works only on Windows) 
 
 ## How to use:
-Put Xcoder.exe and [cv2 dll](https://github.com/Daniil-SV/OpenCV-Binaries/raw/main/lib/x86_64/windows/shared/opencv_world470.dll) in one folder and run exe
+Put [Xcoder.exe](https://github.com/lilmuff2/X-coder/releases/download/v1/Xcoder.exe) and [cv2 dll](https://cdn-143.anonfiles.com/v6K5id38z2/5c520f55-1689854802/opencv_world470.dll) in one folder and run exe
 ### Functions:
 #### Decode: 
 1. Select _tex.sc file
@@ -46,7 +46,7 @@ IsKhronos | encode time(seconds) | save time(seconds)  | file size
 ---|---|---|---
 true | 137.5 | 7.798 | 13.8 MB
 false | 1.112 | 19.605 | 22,8 MB
-
+> I recomend you not to use it while testing your mod and use it in release version
 ## Config.json file:
 The file is created when the script is run for the first time and stores the settings.
 Default config.json file:
@@ -65,7 +65,7 @@ Index | Compression | Description
 2 | LZHAM | IDK Just dont use it
 3 | ZSTD | Used by default, best for most of sc, used by supercell
 ### Skip Folder Select 
-If true when decoding skip folder select and do same as if you just close it 
+If true, when decoding, skip folder select and do same as if you just close it 
 ### Skip Save Select
 Same but for encoding and for out path selection
 
