@@ -52,7 +52,7 @@ fs::path ChooseSaveFile(nfdnchar_t* defname, fs::path defaultpath = "") {
 	}
 	else if (result == NFD_CANCEL) {
 		if (defaultpath != "") {
-			cout << "File Path selected automaticaly. File Path: " << defaultpath.string() << endl;
+			cout << "File Path selected automaticaly.\nFile Path: " << defaultpath.string() << endl;
 			if (!fs::exists(defaultpath.parent_path())) {
 				fs::create_directories(defaultpath.parent_path());
 			}
@@ -80,7 +80,7 @@ fs::path ChooseFolder(fs::path defaultpath = "") {
 	}
 	else if (result == NFD_CANCEL) {
 		if (defaultpath != "") {
-			cout << "Folder selected automaticaly. Folder: " << defaultpath.string() << endl;
+			cout << "Folder selected automaticaly.\nFolder: " << defaultpath.string() << endl;
 			if (!fs::exists(defaultpath)) {
 				fs::create_directories(defaultpath);
 			}
@@ -180,11 +180,13 @@ void PrintHelp() {
 void PrintFunctions() {
 	cout << dye::blue("\n1. Decode") << endl;
 	cout << dye::light_yellow("2. Encode") << endl;
-	cout << dye::green("3. Settings") << endl;
+	cout << dye::light_blue("3. Decode Folder") << endl;
+	cout << dye::yellow("4. Encode Folder") << endl;
+	cout << dye::green("5. Settings") << endl;
 	cout << dye::aqua("Your choice: ");
 }
 
-void Decode(fs::path filepath, json config) {
+void Decode(fs::path filepath, json config, fs::path folderpath="") {
 	time_point startTime = high_resolution_clock::now();
 
 	cout << dye::light_blue("Loading sc tex file...") << endl;
@@ -207,16 +209,21 @@ void Decode(fs::path filepath, json config) {
 	cout << dye::light_blue("Decoding textures...") << endl;
 
 	
-	fs::path folderpath;
-	while (folderpath.empty() || !fs::exists(folderpath)) {
+	if (folderpath == ""){
 		if (config["Skip Folder Select"]) {
 			folderpath = filepath.parent_path() / filepath.stem();
-			cout << "Folder selected automaticaly. Folder: " << folderpath.string() << endl;
+			cout << "Folder selected automaticaly. \nFolder: " << folderpath.string() << endl;
 		}
 		else {
 			cout << dye::light_yellow("Select pngs folder") << endl;
 			folderpath = ChooseFolder(filepath.parent_path() / filepath.stem());
 		}
+	}
+	else {
+		cout << "Folder selected automaticaly. \nFolder: " << folderpath.string() << endl;
+	}
+	if (!fs::exists(folderpath)) {
+		fs::create_directories(folderpath);
 	}
 
 	time_point decodingStartTime = high_resolution_clock::now();
@@ -249,7 +256,21 @@ void Decode(fs::path filepath, json config) {
 	cout << dye::green("Decoding pngs took: ");
 	PrintTime(decodingStartTime, decodingEndTime);
 }
-void Encode(fs::path folderpath, json config) {
+void DecodeFolder(fs::path folderpath, json config) {
+	cout << dye::light_yellow("Select out folders folder") << endl;
+	fs::path folderpath2 = ChooseFolder(folderpath);
+	time_point startTime = high_resolution_clock::now();
+	for (auto file : fs::directory_iterator(folderpath)) {
+		if (hasEnding(file.path().string(), "_tex.sc")) {
+			cout << "File: " + file.path().string() << endl;
+			Decode(file.path(), config, folderpath2 / file.path().stem());
+		}
+	}
+	auto EndTime = high_resolution_clock::now();
+	cout << dye::green("All took: ");
+	PrintTime(startTime, EndTime);
+}
+void Encode(fs::path folderpath, json config, fs::path filepath = "") {
 	time_point startTime = high_resolution_clock::now();
 	cout << dye::light_blue("Reading and encoding pngs...") << endl;
 	sc::SupercellSWF swf;
@@ -303,14 +324,18 @@ void Encode(fs::path folderpath, json config) {
 	PrintTime(startTime, decodingEndTime);
 	
 	cout << dye::light_blue("Saving...") << endl;
-	fs::path filepath;
-	if (config["Skip Save Select"]) {
-		filepath = folderpath / folderpath.stem().concat(".sc");
-		cout << "File Path selected automaticaly. File Path: " << filepath.string() << endl;
+	if (filepath == "") {
+		if (config["Skip Save Select"]) {
+			filepath = folderpath / folderpath.stem().concat(".sc");
+			cout << "File Path selected automaticaly.\nFile Path: " << filepath.string() << endl;
+		}
+		else {
+			cout << dye::light_yellow("Select out file path") << endl;
+			filepath = ChooseSaveFile(L"any_tex.sc", folderpath / folderpath.stem().concat(".sc"));
+		}
 	}
 	else {
-		cout << dye::light_yellow("Select out file path") << endl;
-		filepath = ChooseSaveFile(L"any_tex.sc", folderpath / folderpath.stem().concat(".sc"));
+		cout << "File Path selected automaticaly.\nFile Path: " << filepath.string() << endl;
 	}
 	time_point startsavingTime = high_resolution_clock::now();
 	swf.stream.init();
@@ -322,6 +347,20 @@ void Encode(fs::path folderpath, json config) {
 	auto savingEndTime = high_resolution_clock::now();
 	cout << dye::green("Saving took: ");
 	PrintTime(startsavingTime, savingEndTime);
+}
+void EncodeFolder(fs::path folderpath, json config) {
+	cout << dye::light_yellow("Select out _tex.sc folder") << endl;
+	fs::path folderpath2 = ChooseFolder(folderpath);
+	time_point startTime = high_resolution_clock::now();
+	for (auto folder : fs::directory_iterator(folderpath)) {
+		if (fs::is_directory(folder)) {
+			cout << "Folder: " + folder.path().string() << endl;
+			Encode(folder.path(), config, folderpath2 / folder.path().stem().concat(".sc"));
+		}
+	}
+	auto EndTime = high_resolution_clock::now();
+	cout << dye::green("All took: ");
+	PrintTime(startTime, EndTime);
 }
 int main();
 void Setings(json config) {
@@ -392,6 +431,26 @@ int main()
 			Encode(folderpath, config);
 		}
 		else if (mode == "3") {
+			PrintHelp();
+			cout << dye::light_yellow("Select folder with  _tex.sc files") << endl;
+			fs::path folderpath = ChooseFolder();
+			if (folderpath.empty() || !fs::exists(folderpath)) {
+				return 1;
+			}
+
+			DecodeFolder(folderpath, config);
+		}
+		else if (mode == "4") {
+			PrintHelp();
+			cout << dye::light_yellow("Select folder with folders with pngs") << endl;
+			fs::path folderpath = ChooseFolder();
+			if (folderpath.empty() || !fs::exists(folderpath)) {
+				return 1;
+			}
+
+			EncodeFolder(folderpath, config);
+		}
+		else if (mode == "5") {
 			Setings(config);
 		}
 		else {
