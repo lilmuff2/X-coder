@@ -15,6 +15,7 @@ namespace fs = std::filesystem;
 using namespace std;
 using namespace std::chrono;
 using json = nlohmann::json;
+
 fs::path ChooseFile() {
 	fs::path resultPath;
 
@@ -36,7 +37,6 @@ fs::path ChooseFile() {
 	NFD_Quit();
 	return resultPath;
 }
-
 fs::path ChooseSaveFile(nfdnchar_t* defname, fs::path defaultpath = "") {
 	fs::path resultPath;
 
@@ -67,7 +67,6 @@ fs::path ChooseSaveFile(nfdnchar_t* defname, fs::path defaultpath = "") {
 	NFD_Quit();
 	return resultPath;
 }
-
 fs::path ChooseFolder(fs::path defaultpath = "") {
 	NFD_Init();
 	fs::path resultPath;
@@ -96,6 +95,8 @@ fs::path ChooseFolder(fs::path defaultpath = "") {
 	NFD_Quit();
 	return resultPath;
 }
+
+
 int GetConsoleWith() {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	int columns;
@@ -113,19 +114,6 @@ void printCenter(string s)
 	if (spaces > 0) cout << string(spaces, ' ');
 	cout << dye::light_green(s) << '\n';
 }
-void PrintHelp() {
-	printCenter(R"( ____  __    __   __      ____  _  _    __    __  __    _  _  _  _  ____  ____  __    _
-(_  _)/  \  /  \ (  )    (  _ \( \/ )  (  )  (  )(  )  ( \/ )/ )( \(  __)(  __)/  \  / \
-  )( (  O )(  O )/ (_/\   ) _ ( )  /   / (_/\ )( / (_/\/ \/ \) \/ ( ) _)  ) _)(_/ /  \_/
- (__) \__/  \__/ \____/  (____/(__/    \____/(__)\____/\_)(_/\____/(__)  (__)  (__)  (_)
-)");
-	printCenter("V1.0 | github.com/lilmuff2/X-coder");
-	cout << endl;
-
-	cout << dye::blue("1. Decode") << endl;
-	cout << dye::light_yellow("2. Encode") << endl;
-}
-
 void PrintTime(std::chrono::time_point<std::chrono::high_resolution_clock> start,
 	std::chrono::time_point<std::chrono::high_resolution_clock> end
 ) {
@@ -135,8 +123,65 @@ void PrintTime(std::chrono::time_point<std::chrono::high_resolution_clock> start
 	}
 	else {
 		seconds secTime = duration_cast<seconds>(msTime);
-		std::cout << secTime.count()<<"." << msTime.count() - 1000*secTime.count() << " seconds." << std::endl;
+		std::cout << secTime.count() << "." << msTime.count() - 1000 * secTime.count() << " seconds." << std::endl;
 	}
+}
+
+
+bool hasEnding(std::string const& fullString, std::string const& ending) {
+	if (fullString.length() >= ending.length()) {
+		return (0 == fullString.compare(fullString.length() - ending.length(), ending.length(), ending));
+	}
+	else {
+		return false;
+	}
+}
+
+void writeconfig(json config) {
+	ofstream f("config.json");
+	f << config.dump(1);
+	f.close();
+}
+json readconfig() {
+	json config;
+	if (fs::exists("config.json")) {
+		ifstream f("config.json");
+		config = json::parse(f);
+		f.close();
+	}
+	else {
+		config = {
+			{"Skip Folder Select",false},
+			{"Skip Save Select",false},
+			{"Default Compresion",sc::CompressionSignature::ZSTD}
+		};
+		writeconfig(config);
+	}
+	return config;
+}
+bool invert(bool option) {
+	if (option) {
+		return false;
+	}
+	return true;
+}
+
+
+void PrintHelp() {
+	system("cls");
+	printCenter(R"( ____  __    __   __      ____  _  _    __    __  __    _  _  _  _  ____  ____  __    _
+(_  _)/  \  /  \ (  )    (  _ \( \/ )  (  )  (  )(  )  ( \/ )/ )( \(  __)(  __)/  \  / \
+  )( (  O )(  O )/ (_/\   ) _ ( )  /   / (_/\ )( / (_/\/ \/ \) \/ ( ) _)  ) _)(_/ /  \_/
+ (__) \__/  \__/ \____/  (____/(__/    \____/(__)\____/\_)(_/\____/(__)  (__)  (__)  (_)
+)");
+	printCenter("V1.1 | github.com/lilmuff2/X-coder");
+	cout << endl;
+}
+void PrintFunctions() {
+	cout << dye::blue("\n1. Decode") << endl;
+	cout << dye::light_yellow("2. Encode") << endl;
+	cout << dye::green("3. Settings") << endl;
+	cout << dye::aqua("Your choice: ");
 }
 
 void Decode(fs::path filepath, json config) {
@@ -201,16 +246,8 @@ void Decode(fs::path filepath, json config) {
 	file.close();
 
 	auto decodingEndTime = high_resolution_clock::now();
-	cout << dye::green("Saving pngs took: ");
+	cout << dye::green("Decoding pngs took: ");
 	PrintTime(decodingStartTime, decodingEndTime);
-}
-bool hasEnding(std::string const& fullString, std::string const& ending) {
-	if (fullString.length() >= ending.length()) {
-		return (0 == fullString.compare(fullString.length() - ending.length(), ending.length(), ending));
-	}
-	else {
-		return false;
-	}
 }
 void Encode(fs::path folderpath, json config) {
 	time_point startTime = high_resolution_clock::now();
@@ -286,31 +323,55 @@ void Encode(fs::path folderpath, json config) {
 	cout << dye::green("Saving took: ");
 	PrintTime(startsavingTime, savingEndTime);
 }
+int main();
+void Setings(json config) {
+	vector <string> Compresions = {"NONE","LZMA","LZHAM","ZSTD"};
+	PrintHelp();
+	string seting;
+	cout << dye::blue("1. Skip Folder Select | ") << config["Skip Folder Select"] << endl;
+	cout << dye::light_yellow("2. Skip Save Select | ") << config["Skip Save Select"] << endl;
+	cout << dye::light_blue("3. Default Compresion | ") << Compresions[config["Default Compresion"]] << endl;
+	cout << dye::green("4. Save and exit") << endl;
+	cout << dye::aqua("Select seting you want to change: ");
+	cin >> seting;
+	if (seting == "1") {
+		config["Skip Folder Select"] = invert(config["Skip Folder Select"]);
+		Setings(config);
+	}
+	else if (seting == "2") {
+		config["Skip Save Select"] = invert(config["Skip Save Select"]);
+		Setings(config);
+	}
+	else if (seting == "3") {
+		int compresion;
+		cout << "1. LZMA | Good for big files, like ui" << endl;
+		cout << "2. LZHAM | IDK, just dont use it" << endl;
+		cout << "3. ZSTD | Best for most of sc, used by default" << endl;
+		cout << dye::aqua("Select comresion: ");
+		cin >> compresion;
+		if (compresion > 0 && compresion <= 3) {
+			config["Default Compresion"] = compresion;
+		}
+		Setings(config);
+	}
+	else {
+		writeconfig(config);
+		main();
+	}
+}
+
+
 int main()
 {
 	PrintHelp();
 	json config;
 	string mode;
 	while (true) {
-		if (fs::exists("config.json")) {
-			ifstream f("config.json");
-			config = json::parse(f);
-			f.close();
-		}
-		else {
-			config = {
-				{"Skip Folder Select",false},
-				{"Skip Save Select",false},
-				{"Default Compresion",sc::CompressionSignature::ZSTD}
-			};
-			ofstream f("config.json");
-			f << config.dump(1);
-			f.close();
-		}
-		cout << dye::aqua("Your choice: ");
+		PrintFunctions();
 		cin >> mode;
-
+		config = readconfig();
 		if (mode == "1") {
+			PrintHelp();
 			cout << dye::light_yellow("Select in _tex.sc file") << endl;
 			fs::path filepath = ChooseFile();
 
@@ -321,6 +382,7 @@ int main()
 			Decode(filepath, config);
 		}
 		else if (mode == "2") {
+			PrintHelp();
 			cout << dye::light_yellow("Select folder with pngs") << endl;
 			fs::path folderpath = ChooseFolder();
 			if (folderpath.empty() || !fs::exists(folderpath)) {
@@ -329,9 +391,11 @@ int main()
 
 			Encode(folderpath, config);
 		}
+		else if (mode == "3") {
+			Setings(config);
+		}
 		else {
-			cout << dye::red("Icorrect choise restart exe.");
-			return 1;
+			cout << dye::red("Icorrect choise.");
 		}
 	}
 	return 0;
