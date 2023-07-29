@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\astcenc.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_diagnostic_trace.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_internal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_internal_entry.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_mathlib.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib_avx2_8.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib_common_4.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib_neon_4.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib_none_4.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\astcenc_vecmathlib_sse_4.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_image.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_image_write.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tinyexr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\astcenc_averages_and_directions.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_block_sizes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_color_quantize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_color_unquantize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_compress_symbolic.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_compute_variance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_decompress_symbolic.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_diagnostic_trace.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_entry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_find_best_partitioning.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_ideal_endpoints_and_weights.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_image.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_integer_sequence.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_mathlib.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_mathlib_softfloat.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_partition_tables.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_percentile_tables.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_pick_best_endpoint_format.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_platform_isa_detection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_quantization.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_symbolic_physical.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_weight_align.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\astcenc_weight_quant_xfer_tables.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

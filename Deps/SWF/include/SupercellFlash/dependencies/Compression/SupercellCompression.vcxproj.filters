@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\SupercellCompression">
+      <UniqueIdentifier>{19E02931-059B-19DD-AE52-92279AEC636D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\SupercellCompression\error">
+      <UniqueIdentifier>{3266889A-1EA2-8B04-87B4-A3FB730F341F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\backend">
+      <UniqueIdentifier>{0427456E-70DC-BD63-F9D0-B73A6585B467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\caching">
+      <UniqueIdentifier>{A9CF3DBB-1585-B6B0-9E79-B0870A2EADB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\compression">
+      <UniqueIdentifier>{2E35E687-9AC0-534C-A3D1-D6400FDCAF4C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\SupercellCompression.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SupercellCompression\Compressor.h">
+      <Filter>include\SupercellCompression</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SupercellCompression\Decompressor.h">
+      <Filter>include\SupercellCompression</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SupercellCompression\Signature.h">
+      <Filter>include\SupercellCompression</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SupercellCompression\error\CompressException.h">
+      <Filter>include\SupercellCompression\error</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SupercellCompression\error\DecompressException.h">
+      <Filter>include\SupercellCompression\error</Filter>
+    </ClInclude>
+    <ClInclude Include="src\backend\LzhamCompression.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\backend\LzmaCompression.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\backend\ZstdCompression.h">
+      <Filter>src\backend</Filter>
+    </ClInclude>
+    <ClInclude Include="src\caching\cache.h">
+      <Filter>src\caching</Filter>
+    </ClInclude>
+    <ClInclude Include="src\caching\md5.h">
+      <Filter>src\caching</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\backend\LzhamCompression.cpp">
+      <Filter>src\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="src\backend\LzmaCompression.cpp">
+      <Filter>src\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="src\backend\ZstdCompression.cpp">
+      <Filter>src\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="src\caching\cache.cpp">
+      <Filter>src\caching</Filter>
+    </ClCompile>
+    <ClCompile Include="src\caching\md5.cpp">
+      <Filter>src\caching</Filter>
+    </ClCompile>
+    <ClCompile Include="src\compression\Compressor.cpp">
+      <Filter>src\compression</Filter>
+    </ClCompile>
+    <ClCompile Include="src\compression\Decompressor.cpp">
+      <Filter>src\compression</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C65C67B4-B2EB-F07D-5B0A-057947780124}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SupercellCompression</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\..\build\bin\Debug\windows\x86_64\SupercellCompression\</OutDir>
+    <IntDir>..\..\..\..\build\obj\Debug\windows\x86_64\SupercellCompression\</IntDir>
+    <TargetName>SupercellCompression</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\build\bin\Release\windows\x86_64\SupercellCompression\</OutDir>
+    <IntDir>..\..\..\..\build\obj\Release\windows\x86_64\SupercellCompression\</IntDir>
+    <TargetName>SupercellCompression</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;dependencies\Bytestream;dependencies\lzham\include;dependencies\lzma\include;dependencies\zstd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src;dependencies\Bytestream;dependencies\lzham\include;dependencies\lzma\include;dependencies\zstd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\SupercellCompression.h" />
+    <ClInclude Include="include\SupercellCompression\Compressor.h" />
+    <ClInclude Include="include\SupercellCompression\Decompressor.h" />
+    <ClInclude Include="include\SupercellCompression\Signature.h" />
+    <ClInclude Include="include\SupercellCompression\error\CompressException.h" />
+    <ClInclude Include="include\SupercellCompression\error\DecompressException.h" />
+    <ClInclude Include="src\backend\LzhamCompression.h" />
+    <ClInclude Include="src\backend\LzmaCompression.h" />
+    <ClInclude Include="src\backend\ZstdCompression.h" />
+    <ClInclude Include="src\caching\cache.h" />
+    <ClInclude Include="src\caching\md5.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\backend\LzhamCompression.cpp" />
+    <ClCompile Include="src\backend\LzmaCompression.cpp" />
+    <ClCompile Include="src\backend\ZstdCompression.cpp" />
+    <ClCompile Include="src\caching\cache.cpp" />
+    <ClCompile Include="src\caching\md5.cpp" />
+    <ClCompile Include="src\compression\Compressor.cpp" />
+    <ClCompile Include="src\compression\Decompressor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="dependencies\lzma\LZMA.vcxproj">
+      <Project>{5945887C-457C-890D-EE68-6F10DA7E050F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="dependencies\lzham\LZHAM.vcxproj">
+      <Project>{81DB900D-EDEF-B8BE-B671-5C1E2245B5EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="dependencies\zstd\Zstandard.vcxproj">
+      <Project>{90DB15D3-FC45-CA49-4584-7BEFB12DA89E}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

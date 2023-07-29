@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{81DB900D-EDEF-B8BE-B671-5C1E2245B5EF}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LZHAM</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\..\..\..\build\bin\Debug\windows\x86_64\LZHAM\</OutDir>
+    <IntDir>..\..\..\..\..\..\build\obj\Debug\windows\x86_64\LZHAM\</IntDir>
+    <TargetName>LZHAM</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\..\..\build\bin\Release\windows\x86_64\LZHAM\</OutDir>
+    <IntDir>..\..\..\..\..\..\build\obj\Release\windows\x86_64\LZHAM\</IntDir>
+    <TargetName>LZHAM</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_LIB;_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src\lzhamcomp;src\lzhamdecomp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_LIB;NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;src\lzhamcomp;src\lzhamdecomp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\lzham.h" />
+    <ClInclude Include="include\lzham_dynamic_lib.h" />
+    <ClInclude Include="include\lzham_static_lib.h" />
+    <ClInclude Include="include\zlib.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_lzbase.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_lzcomp_internal.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_match_accel.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_null_threading.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_pthreads_threading.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_threading.h" />
+    <ClInclude Include="src\lzhamcomp\lzham_win32_threading.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_assert.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_checksum.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_config.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_core.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_decomp.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_helpers.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_huffman_codes.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_lzdecompbase.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_math.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_mem.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_platform.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_prefix_coding.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_symbol_codec.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_timer.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_traits.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_types.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_utils.h" />
+    <ClInclude Include="src\lzhamdecomp\lzham_vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\lzham_lib.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_lzbase.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp_internal.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp_state.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_match_accel.cpp" />
+    <ClCompile Include="src\lzhamcomp\lzham_win32_threading.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_assert.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_checksum.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_huffman_codes.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_lzdecomp.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_lzdecompbase.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_mem.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_platform.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_prefix_coding.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_symbol_codec.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_timer.cpp" />
+    <ClCompile Include="src\lzhamdecomp\lzham_vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\lzham_exports.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

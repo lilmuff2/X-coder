@@ -1,0 +1,3 @@
+[submodule "ThirdParty/Bytestream"]
+	path = ThirdParty/Bytestream
+	url = https://github.com/scwmake/SupercellBytestream

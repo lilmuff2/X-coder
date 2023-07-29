@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lzhamcomp">
+      <UniqueIdentifier>{A7BE8F1D-137F-0B54-DCB9-54D148395030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lzhamdecomp">
+      <UniqueIdentifier>{70C614C2-DC51-8286-E562-057B516DDE86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\lzham.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lzham_dynamic_lib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lzham_static_lib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\zlib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_lzbase.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_lzcomp_internal.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_match_accel.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_null_threading.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_pthreads_threading.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_threading.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamcomp\lzham_win32_threading.h">
+      <Filter>src\lzhamcomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_assert.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_checksum.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_config.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_core.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_decomp.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_helpers.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_huffman_codes.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_lzdecompbase.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_math.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_mem.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_platform.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_prefix_coding.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_symbol_codec.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_timer.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_traits.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_types.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_utils.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzhamdecomp\lzham_vector.h">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\lzham_lib.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_lzbase.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp_internal.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_lzcomp_state.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_match_accel.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamcomp\lzham_win32_threading.cpp">
+      <Filter>src\lzhamcomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_assert.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_checksum.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_huffman_codes.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_lzdecomp.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_lzdecompbase.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_mem.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_platform.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_prefix_coding.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_symbol_codec.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_timer.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzhamdecomp\lzham_vector.cpp">
+      <Filter>src\lzhamdecomp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\lzham_exports.inc">
+      <Filter>include</Filter>
+    </None>
+  </ItemGroup>
+</Project>

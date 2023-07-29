@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\textures">
+      <UniqueIdentifier>{9CA79A4D-88A0-B99F-B1D2-9E249D2A99AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\textures">
+      <UniqueIdentifier>{C0FB1B39-AC5E-ABDD-55E4-E39341267760}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\TextureLoader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureLoaderInfo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\AstcTexture.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\CompressedTexture.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\KhronosTexture.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\KhronosTexture1.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\KhronosTexture2.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\textures\RawTexture.h">
+      <Filter>include\textures</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\TextureLoader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textures\AstcTexture.cpp">
+      <Filter>src\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textures\KhronosTexture.cpp">
+      <Filter>src\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textures\KhronosTexture1.cpp">
+      <Filter>src\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textures\KhronosTexture2.cpp">
+      <Filter>src\textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textures\RawTexture.cpp">
+      <Filter>src\textures</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
