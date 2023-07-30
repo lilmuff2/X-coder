@@ -1,6 +1,9 @@
 # <img src="https://github.com/lilmuff2/X-coder/blob/images/icon.png?raw=true" width="35" height="35"> X-coder
 Tool to decode and encode sc files from supercell games (works only on Windows) 
 ![menu](https://github.com/lilmuff2/X-coder/blob/images/menu.png?raw=true)
+## [GUI VERSION](https://github.com/lilmuff2/X-coder/tree/PC-GUI) 
+![menu-gui](https://github.com/lilmuff2/X-coder/blob/images/menu-gui.png?raw=true)
+If you want more beautiful version with interface download it
 ## How to use:
 Put [Xcoder.exe](https://github.com/lilmuff2/X-coder/releases/download/v1.1/Xcoder.exe) and [cv2 dll](https://github.com/lilmuff2/X-coder/releases/download/v1.1/opencv_world470.dll) in one folder and run exe
 
