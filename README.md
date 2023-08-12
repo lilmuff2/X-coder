@@ -4,6 +4,8 @@ Tool to decode and encode sc files from supercell games (works only on Windows)
 ## [GUI VERSION](https://github.com/lilmuff2/X-coder/tree/PC-GUI) 
 ![menu-gui](https://github.com/lilmuff2/X-coder/blob/images/menu-gui.png?raw=true)
 If you want more beautiful version with interface download it
+## [APK](https://github.com/lilmuff2/X-coder/releases/download/v1.1android/X.coder_1.1.apk) 
+If you use android download it and if you dont know how to use it check pc gui version it is same in usage
 ## How to use:
 Put [Xcoder.exe](https://github.com/lilmuff2/X-coder/releases/download/v1.1/Xcoder.exe) and [cv2 dll](https://github.com/lilmuff2/X-coder/releases/download/v1.1/opencv_world470.dll) in one folder and run exe
 
