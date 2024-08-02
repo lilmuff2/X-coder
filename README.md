@@ -76,4 +76,4 @@ Lzham | 73sec | 27MB | It's useless.
 Zstandard | 35secs | 30MB | Standard, fast and compresses well.
 
 # Any questions?
-My social networking nickname is lilmuff1 message me or join <a target=”_blank” href="https://t.me/XcoderBS">Telegram</a> или <a href="https://discord.com/invite/yNajwpBe" target=”_blank”>Discord</a>  
+My social networking nickname is lilmuff1 message me or join <a target=”_blank” href="https://t.me/XcoderBS">Telegram</a> or <a href="https://discord.com/invite/yNajwpBe" target=”_blank”>Discord</a>  
