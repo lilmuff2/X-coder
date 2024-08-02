@@ -1,6 +1,6 @@
 # <img src="https://github.com/lilmuff2/X-coder/blob/master/android/res/drawable-xxxhdpi/icon.png?raw=true" width="35" height="35"> X-coder
 [ДЛЯ РУССКИХ](https://github.com/lilmuff2/X-coder/blob/master/Readme_ru.md)
-
+[INSTALL](https://github.com/lilmuff2/X-coder/releases/tag/v2.0)
 A tool for decoding (sc to png) and encoding (png to sc) sc files used in Supercell games.
 ![Menu](https://github.com/lilmuff2/X-coder/blob/images/new_menu.png?raw=true)
 ## Functions:
