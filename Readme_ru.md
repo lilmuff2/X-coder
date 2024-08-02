@@ -74,4 +74,4 @@ Lzham | 73с | 27MB | Оно бесполезно
 Zstandard | 35 с | 30 MB| Стандартное, быстрое и хорошо сжимает
 
 # Остались вопросы?
-Мой ник в соцсетях lilmuff1 пишите или присоединяйтесь к Telegram или Discord
+Мой ник в соцсетях lilmuff1 пишите или присоединяйтесь к [Telegram](https://t.me/XcoderBS) or [Discord](https://discord.com/invite/yNajwpBe)
