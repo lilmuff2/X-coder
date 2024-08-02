@@ -1,4 +1,5 @@
 #  X-coder
+[Скачать](https://github.com/lilmuff2/X-coder/releases/tag/v2.0)
 Инструмент для декодирования (sc в png) и кодирования (png в sc) файлов sc которые используются в играх Supercell
 ![Menu](https://github.com/lilmuff2/X-coder/blob/images/new_menu.png?raw=true)
 # Функции:
