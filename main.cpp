@@ -2,6 +2,7 @@
 
 #include <QApplication>
 #include <QLocale>
+#include <QTranslator>
 #if defined Q_OS_ANDROID
 #include <QtCore/private/qandroidextras_p.h>
 #include <QJniObject>
@@ -12,6 +13,16 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QTranslator translator;
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    for (const QString &locale : uiLanguages) {
+        const QString baseName = ":/X-coder_" + QLocale(locale).name();
+        qDebug()<<baseName << translator.load(baseName);
+        if (translator.load(baseName)) {
+            a.installTranslator(&translator);
+            break;
+        }
+    }
     MainWindow w;
     w.show();
     #if defined Q_OS_ANDROID

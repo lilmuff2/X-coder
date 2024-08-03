@@ -12,13 +12,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
-
+set(TS_FILES X-coder_ru.ts)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
         SWFFile.hpp
+        processing.ui
+        ${TS_FILES}
 )
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(X-coder
@@ -26,20 +28,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         android/AndroidManifest.xml
         rc.rc
-        processing.h processing.cpp processing.ui
+        processing.h processing.cpp
         json.hpp
+        res.qrc
         )
-
-else()
-    if(ANDROID)
-        add_library(X-coder SHARED
-            ${PROJECT_SOURCES}
-        )
-    else()
-        add_executable(X-coder
-            ${PROJECT_SOURCES}
-        )
-    endif()
 endif()
 target_link_libraries(X-coder PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
@@ -82,6 +74,10 @@ target_link_libraries(
    X-coder PRIVATE
     SupercellFlash
 )
+qt6_add_translations(X-coder
+    TS_FILES ${TS_FILES}
+    QM_FILES_OUTPUT_VARIABLE qm_files)
+install(FILES ${qm_files} DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(X-coder)

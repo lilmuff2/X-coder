@@ -22,6 +22,7 @@ public:
     void print(std::string str);
     void decode(std::filesystem::path input_path,std::filesystem::path output_path);
     void encode(std::filesystem::path input_path,std::filesystem::path output_path);
+    void print(QString str);
 private slots:
     void on_Select1_clicked();
 

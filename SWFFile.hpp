@@ -109,7 +109,7 @@ namespace sc
 						switch (texture.encoding())
 						{
 						case SWFTexture::TextureEncoding::KhronosTexture:
-							encoding = "khronos";
+                            encoding = "khronos";
 							break;
 						case SWFTexture::TextureEncoding::Raw:
 							encoding = "raw";
