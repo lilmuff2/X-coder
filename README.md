@@ -32,7 +32,7 @@ A tool for decoding (sc to png) and encoding (png to sc) sc files used in Superc
 
 ![Encode folder example](https://github.com/lilmuff2/X-coder/blob/images/new_encode_folder.png?raw=true)
 ## .json file:
-Этот файл генерируется при декодировании Пример:
+This file generated after decoding example:
 ```javascript
 {
     "Textures": [ 
