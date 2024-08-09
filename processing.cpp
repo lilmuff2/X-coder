@@ -5,6 +5,7 @@
 #include "logger/time.h"
 #include "json.hpp"
 #include <QScrollBar>
+#include <qtranslator.h>
 #if defined Q_OS_ANDROID
 #include <Qtcore/private/qandroidextras_p.h>
 #include <QJniObject>
@@ -18,7 +19,6 @@ Processing::Processing(QWidget *parent)
     #if defined Q_OS_ANDROID
     ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     #endif
-
 }
 static QString getRealPathFromUri(const QUrl &url)
 {
@@ -114,12 +114,13 @@ Processing::~Processing()
 
 void Processing::ChangeTitle(QString newtitle)
 {
+    ui->retranslateUi(this);
     if(newtitle.startsWith("Encode")){
         ui->Run->setText(tr("ENCODE"));
         ui->Title->setText(tr("ENCODE"));
         Processing::setWindowTitle(tr("ENCODE"));
         Processing::Encode = true;
-        if(!newtitle.endsWith("Folder")){ui->Input2->setPlaceholderText(tr("OUT FILE"));}
+        if(!newtitle.endsWith("Folder")){ui->Input2->setPlaceholderText(tr("OUT FILE (OPTIONALLY)"));}
         ui->Input1->setPlaceholderText(tr("INPUT FOLDER"));
     }
     if(newtitle.endsWith("Folder")){
@@ -251,6 +252,7 @@ void Processing::on_Run_clicked()
             [this](){
                 std::chrono::time_point operation_start = std::chrono::high_resolution_clock::now();
                 fs::path input_path =ui->Input1->toPlainText().toStdString(); fs::path output_path = ui->Input2->toPlainText().toStdString();
+
                 if(!fs::exists(input_path)){
                     print(tr("ERROR: Input folder doesnt exist!"));
                     QMetaObject::invokeMethod(ui->Run,"setEnabled", Qt::QueuedConnection,Q_ARG(bool, true));
@@ -364,5 +366,3 @@ void Processing::encode(std::filesystem::path input_path, std::filesystem::path 
         print(tr(e.what()));
     }
 }
-
-

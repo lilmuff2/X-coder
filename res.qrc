@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>X-coder_ru.qm</file>
+        <file>translate/X-coder_ru.qm</file>
     </qresource>
 </RCC>
