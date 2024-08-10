@@ -22,9 +22,6 @@ int main(int argc, char *argv[])
         QApplication a(argc, argv);
         QTranslator translator;
         std::filesystem::path settings = "settings.json";
-        #if defined Q_OS_ANDROID
-        settings = "/sdcard/Android/data/lilmuff1.xcoder/settings.json";
-        #endif
         if(!std::filesystem::exists(settings)){
             const QStringList uiLanguages = QLocale::system().uiLanguages();
             for (const QString &locale : uiLanguages) {

@@ -1,7 +1,6 @@
 #include "processing.h"
-#include "ui_processing.h"
+#include "../ui/ui_processing.h"
 #include "SWFFile.hpp"
-#include "processing.h"
 #include "logger/time.h"
 #include "json.hpp"
 #include <QScrollBar>

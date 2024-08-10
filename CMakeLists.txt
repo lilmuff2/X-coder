@@ -13,29 +13,31 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Qml LinguistTools)
 
 
-set(TS_FILES translate/X-coder_ru.ts)
+set(TS_FILES res/translate/X-coder_ru.ts)
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        SWFFile.hpp
-        processing.ui
+        source/main.cpp
+        source/mainwindow.cpp
+        source/processing.cpp
+        source/json.hpp
+        source/SWFFile.hpp
+        headers/mainwindow.h
+        headers/processing.h
+        ui/mainwindow.ui
+        ui/processing.ui
         ${TS_FILES}
 )
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(X-coder
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         android/AndroidManifest.xml
-        rc.rc
-        processing.h processing.cpp
-        json.hpp
-        res.qrc
+        res/rc.rc
+        res/res.qrc
         )
 endif()
 target_link_libraries(X-coder PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-
+include_directories(headers ui source)
 if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.X-coder)
 endif()
@@ -78,7 +80,7 @@ target_link_libraries(
 qt6_add_translations(X-coder
     TS_FILES ${TS_FILES}
     QM_FILES_OUTPUT_VARIABLE qm_files)
-install(FILES ${qm_files} DESTINATION ${CMAKE_INSTALL_BINDIR})
+#install(FILES ${qm_files} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(X-coder)

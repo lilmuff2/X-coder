@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "./../ui/ui_mainwindow.h"
 #include "processing.h"
 
 #include <QMessageBox>
@@ -56,9 +56,7 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
     std::vector<std::string> langs = {"en","ru"};
     std::filesystem::path settings = "settings.json";
-    #if defined Q_OS_ANDROID
-    settings = "/sdcard/Android/data/lilmuff1.xcoder/settings.json";
-    #endif
+
     std::ifstream cfile(settings);
     json config = json::parse(cfile);
     config["language"]=langs[index];
