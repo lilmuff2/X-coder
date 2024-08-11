@@ -9,17 +9,18 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Qml LinguistTools)
 
 
-set(TS_FILES res/translate/X-coder_ru.ts)
+set(TS_FILES res/translate/X-coder_ru.ts res/translate/X-coder_any.ts)
 set(PROJECT_SOURCES
         source/main.cpp
         source/mainwindow.cpp
         source/processing.cpp
         source/json.hpp
         source/SWFFile.hpp
+        source/config.hpp
         headers/mainwindow.h
         headers/processing.h
         ui/mainwindow.ui
@@ -36,7 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         res/res.qrc
         )
 endif()
-target_link_libraries(X-coder PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(X-coder PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Network)
 include_directories(headers ui source)
 if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.X-coder)

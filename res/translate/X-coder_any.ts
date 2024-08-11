@@ -1,74 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="20"/>
-        <location filename="../../ui/mainwindow.ui" line="69"/>
-        <source>X CODER</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainwindow.ui" line="104"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;tg://resolve?domain=XcoderBS&quot;&gt;&lt;span style=&quot; font-size:14pt; text-decoration: underline; color:#007af4;&quot;&gt;https://t.me/XcoderBS&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../ui/mainwindow.ui" line="162"/>
         <source>DECODE</source>
-        <translation>ДЕКОД</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="199"/>
         <source>FILE</source>
-        <translation>ФАЙЛ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="230"/>
         <source>FILES</source>
-        <translation>ФАЙЛЫ</translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainwindow.ui" line="303"/>
-        <source>FOLDER</source>
-        <translation>ПАПКУ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="264"/>
         <source>ENCODE</source>
-        <translation>ЕНКОД</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainwindow.ui" line="303"/>
+        <source>FOLDER</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="334"/>
         <source>FOLDERS</source>
-        <translation>ПАПКИ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="368"/>
         <source>LANGUAGE</source>
-        <translation>ЯЗЫК</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="409"/>
         <source>English</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="414"/>
         <source>Русский</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.ui" line="456"/>
         <location filename="../../source/mainwindow.cpp" line="44"/>
         <source>ABOUT</source>
-        <translation>ИНФО</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/mainwindow.cpp" line="21"/>
         <source>en</source>
-        <translation>ru</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -78,89 +67,71 @@
         <location filename="../../ui/processing.ui" line="52"/>
         <location filename="../../ui/processing.ui" line="430"/>
         <source>DECODE</source>
-        <translation>ДЕКОД</translation>
-    </message>
-    <message>
-        <location filename="../../ui/processing.ui" line="81"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;tg://resolve?domain=XcoderBS&quot;&gt;&lt;span style=&quot; font-size:14pt; text-decoration: underline; color:#007af4;&quot;&gt;https://t.me/XcoderBS&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/processing.ui" line="144"/>
-        <location filename="../../ui/processing.ui" line="250"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Segoe UI&apos;; font-size:15pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/processing.ui" line="260"/>
-        <source>OUT FOLDER (OPTIONALLY)</source>
-        <translation>ВЫХОДНЯ ПАПКА (ОПЦИОНАЛЬНО)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/processing.ui" line="154"/>
         <source>INPUT FILE</source>
-        <translation>ВХОДНОЙ ФАЙЛ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/processing.ui" line="186"/>
         <location filename="../../ui/processing.ui" line="292"/>
         <source>SELECT</source>
-        <translation>ВЫБРАТЬ</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/processing.ui" line="260"/>
+        <source>OUT FOLDER (OPTIONALLY)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/processing.ui" line="388"/>
         <location filename="../../source/processing.cpp" line="190"/>
         <source>CONSOLE:</source>
-        <translation>КОНСОЛЬ: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/processing.ui" line="456"/>
         <source>CLOSE</source>
-        <translation>ЗАКРЫТЬ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="118"/>
         <location filename="../../source/processing.cpp" line="119"/>
         <location filename="../../source/processing.cpp" line="120"/>
         <source>ENCODE</source>
-        <translation>ЕНКОД</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="122"/>
         <source>OUT FILE (OPTIONALLY)</source>
-        <translation>ВЫХОДНОЙ ФАЙЛ (ОПЦИОНАЛЬНО)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="123"/>
         <location filename="../../source/processing.cpp" line="126"/>
         <source>INPUT FOLDER</source>
-        <translation>ВХОДНАЯ ПАПКА</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="196"/>
         <location filename="../../source/processing.cpp" line="242"/>
         <source>Decoding took: </source>
-        <translation>Декод занял: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="208"/>
         <location filename="../../source/processing.cpp" line="285"/>
         <source>Encoding took: </source>
-        <translation>Енкод занял: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="220"/>
         <location filename="../../source/processing.cpp" line="263"/>
         <location filename="../../source/processing.cpp" line="343"/>
         <source>ERROR: Input folder doesnt exist!</source>
-        <translation>ОШИБКА: Входной папки не существует!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="226"/>
@@ -169,79 +140,79 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <location filename="../../source/processing.cpp" line="358"/>
         <source>INFO: Out path is empty, so it will be:
 </source>
-        <translation>ИНФО: Выходной путь пустой, он выбран автоматически:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="246"/>
         <source>Decoding %d files took: </source>
-        <translation>Декод %d файлов занял: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="248"/>
         <source>ERROR: No _tex.sc in input folder. Folder must contains texture files!</source>
-        <translation>ОШИБКА: Нету _tex.sc файлов в входной папке. Папка должна содержать файлы текстур!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="289"/>
         <source>Encoding %d files took: </source>
-        <translation>Енкод %d файлов занял: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="291"/>
         <source>ERROR: No folders in input folder. Folder must contains folders with pngs!</source>
-        <translation>ОШИБКА: Нету папок в входной папке. Пака должа содержать папки с пнгшками!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="303"/>
         <source>ERROR: Input file doesnt exist!</source>
-        <translation>ОШИБКА: Входной файл не существует!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="307"/>
         <source>WARNING: INPUT FILE MAY NOT BE _TEX.SC if so out will be empty. INPUT FILE MUST BE TEXTURE FILE</source>
-        <translation>ПРЕДДУПРЕЖДЕНИЕ: Возможно это не файл текстуры. Входной файл должен быть _tex.sc</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="309"/>
         <location filename="../../source/processing.cpp" line="346"/>
         <source>Working on </source>
-        <translation>Работаем над </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="310"/>
         <source>Loading file...</source>
-        <translation>Загружаем файл...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="323"/>
         <source>INFO: It is dl file, so it will be coped to out folder</source>
-        <translation>ИНФО: Это dl файл, он быдет скопирован в выходнкю папку</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="329"/>
         <source>Decoding file...</source>
-        <translation>Декод файла....</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="333"/>
         <location filename="../../source/processing.cpp" line="377"/>
         <source>ERROR:</source>
-        <translation>ОШИБКА:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="351"/>
         <source>INFO: It is dl, so loading sc...</source>
-        <translation>ИНФО: это dl, загружаем sc...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="354"/>
         <source>Loading images...</source>
-        <translation>Загружем картинки...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../source/processing.cpp" line="360"/>
         <source>Saving file...</source>
-        <translation>Сохраняем файл...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -249,7 +220,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../source/main.cpp" line="40"/>
         <source>en</source>
-        <translation>ru</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -229,19 +229,26 @@ void Processing::on_Run_clicked()
                 {
                     fs::remove_all(output_path);
                 }
+                int dec = 0;
                 fs::create_directories(output_path);
                 for (auto const& file_descriptor : std::filesystem::directory_iterator(input_path))
                 {
                     std::filesystem::path filepath = file_descriptor.path();
                     if (file_descriptor.is_regular_file() && (filepath.stem().string().find("_tex") != std::string::npos || filepath.stem().string().find("_dl") != std::string::npos))
                     {
+                        dec++;
                         std::chrono::time_point doperation_start = std::chrono::high_resolution_clock::now();
                         decode(filepath,output_path/filepath.stem());
                         print(tr("Decoding took: ").toStdString()+sc::time::calculate_time(doperation_start, std::chrono::high_resolution_clock::now()));
                     }
                 }
-                print(tr("Decoding all files took: ").toStdString()+sc::time::calculate_time(operation_start, std::chrono::high_resolution_clock::now()));
+                if(dec>0){
+                    print(tr("Decoding %d files took: ").replace("%d",QString::number(dec)).toStdString()+sc::time::calculate_time(operation_start, std::chrono::high_resolution_clock::now()));
+                }else{
+                    print(tr("ERROR: No _tex.sc in input folder. Folder must contains texture files!"));
+                }
                 QMetaObject::invokeMethod(ui->Run,"setEnabled", Qt::QueuedConnection,Q_ARG(bool, true));
+
             }
         );
         th.detach();
@@ -266,17 +273,23 @@ void Processing::on_Run_clicked()
                     fs::remove_all(output_path);
                 }
                 fs::create_directories(output_path);
+                int enc = 0;
                 for (auto const& file_descriptor : std::filesystem::directory_iterator(input_path))
                 {
                     std::filesystem::path filepath = file_descriptor.path();
                     if (file_descriptor.is_directory() && (filepath.stem().string().find("_tex") != std::string::npos || filepath.stem().string().find("_dl") != std::string::npos))
                     {
+                        enc++;
                         std::chrono::time_point eoperation_start = std::chrono::high_resolution_clock::now();
                         encode(filepath,output_path/filepath.stem().concat(".sc"));
                         print(tr("Encoding took: ").toStdString()+sc::time::calculate_time(eoperation_start, std::chrono::high_resolution_clock::now()));
                     }
                 }
-                print(tr("Encoding all files took: ").toStdString()+sc::time::calculate_time(operation_start, std::chrono::high_resolution_clock::now()));
+                if(enc>0){
+                    print(tr("Encoding %d files took: ").replace("%d",QString::number(enc)).toStdString()+sc::time::calculate_time(operation_start, std::chrono::high_resolution_clock::now()));
+                }else{
+                    print(tr("ERROR: No folders in input folder. Folder must contains folders with pngs!"));
+                }
                 QMetaObject::invokeMethod(ui->Run,"setEnabled", Qt::QueuedConnection,Q_ARG(bool, true));
             }
             );

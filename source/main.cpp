@@ -3,59 +3,48 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
-#include "json.hpp"
-#include <fstream>
-#include <io/file_stream.h>
-using json = nlohmann::ordered_json;
-
 #if defined Q_OS_ANDROID
 #include <QtCore/private/qandroidextras_p.h>
 #include <QJniObject>
 #endif
 
-
 int main(int argc, char *argv[])
 {
-
     int currentExitCode = 0;
     do {
         QApplication a(argc, argv);
         QTranslator translator;
-        std::filesystem::path settings = "settings.json";
-        if(!std::filesystem::exists(settings)){
-            const QStringList uiLanguages = QLocale::system().uiLanguages();
-            for (const QString &locale : uiLanguages) {
-                QString baseName = "X-coder_" + QLocale(locale).name();
-                if (translator.load(baseName)) {
+        Config *cfg = new Config();
+        QString lan = cfg->lang();
+        if(lan=="none"){
+            for (const QString &locale : QLocale::system().uiLanguages()) {
+                if (translator.load("X-coder_" + QLocale(locale).name())) {
                     a.installTranslator(&translator);
                     break;
                 }else{
-                    QString baseName = ":/translate/X-coder_" + QLocale(locale).name();
-                    if (translator.load(baseName)) {
+                    if (translator.load(":/translate/X-coder_" + QLocale(locale).name())) {
                         a.installTranslator(&translator);
                         break;
                     }
                 }
             }
-            json config = {{"language",QTranslator::tr("en").toStdString()}};
-            sc::OutputFileStream file_info(settings);
-            file_info.write(config.dump(4).data(), config.dump(4).size());
+            cfg->lang(QTranslator::tr("en"));
         }else{
-            std::ifstream cfile(settings);
-            json config = json::parse(cfile);
-            std::string lan = config["language"];
-            if (translator.load("X-coder_" + QString().fromStdString(lan))) {
+            if (translator.load("X-coder_" + lan)) {
                 a.installTranslator(&translator);
-            }else if (translator.load(":/translate/X-coder_" + QString().fromStdString(lan))) {
+            }else if (translator.load(":/translate/X-coder_" +lan)) {
                 a.installTranslator(&translator);
-            }else if(config["language"]!="en"){
-                config["language"]="en";
-                sc::OutputFileStream file_info(settings);
-                file_info.write(config.dump(4).data(), config.dump(4).size());
+            }else if(lan!="en"){
+                cfg->lang("en");
             }
         }
         MainWindow w;
         w.show();
+        if(!currentExitCode){
+            if(w.CheckUpdates()){
+                return currentExitCode;
+            }
+        }
     #if defined Q_OS_ANDROID
         if (QtAndroidPrivate::androidSdkVersion() >= 30){
     #define PACKAGE_NAME "package:lilmuff1.xcoder"
@@ -81,6 +70,6 @@ int main(int argc, char *argv[])
         }
     #endif
         currentExitCode = a.exec();
-    } while( currentExitCode ==69 );
+    } while( currentExitCode == 69 );
     return currentExitCode;
 }

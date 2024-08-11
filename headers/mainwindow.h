@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "config.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,6 +17,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int CheckUpdates();
+    Config *cfg;
+    std::vector<QString> langs = {"en","ru"};
 private slots:
     void BtnCLicked();
 
