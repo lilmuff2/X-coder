@@ -47,6 +47,6 @@ public :
     }
     void update(){
         std::ofstream o(path);
-        o << config.dump(4) << std::endl;
+        o << config.dump(4);
     }
 } ;

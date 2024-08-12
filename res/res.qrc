@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>translate/X-coder_ru.qm</file>
+        <file>Pusia-Bold.otf</file>
     </qresource>
 </RCC>

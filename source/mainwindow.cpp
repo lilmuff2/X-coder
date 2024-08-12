@@ -16,9 +16,9 @@ void htmlGet(const QUrl &url, const std::function<void(const QString&)> &fun) {
         response->deleteLater();
         response->manager()->deleteLater();
         if (response->error() != QNetworkReply::NoError) return;
-
         auto const html = QString::fromUtf8(response->readAll());
         fun(html); // do something with the data
+
     }) && manager.take();
 }
 MainWindow::MainWindow(QWidget *parent)
@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
             break;
         }
     }
+    lanchanged = true;
 }
 
 MainWindow::~MainWindow()
@@ -52,19 +53,23 @@ int MainWindow::CheckUpdates()
         int MinVersion = v["MinVersion"];
         cfg->versions(ActualVersion,MinVersion);
     });
-    if(cfg->versions()[1]>21){
+    if(cfg->versions()[1]>22){
         QMessageBox msgBox;
         msgBox.setWindowTitle(tr("UPDATE AVAILABE"));
         msgBox.setTextFormat(Qt::RichText);   //this is what makes the links clickable
         msgBox.setText(tr("You can find new version on <a href='https://github.com/lilmuff2/X-coder/releases'>https://github.com/lilmuff2/X-coder/releases</a>"));
+        QPushButton *btn = msgBox.addButton(tr("UPDATE"), QMessageBox::ActionRole);
         msgBox.addButton(tr("EXIT"), QMessageBox::ActionRole);
         msgBox.exec();
+        if (msgBox.clickedButton() == btn) {
+            QDesktopServices::openUrl(QUrl("https://github.com/lilmuff2/X-coder/releases"));
+        }
         return 1;
-    }else if(cfg->versions()[0]>21){
+    }else if(cfg->versions()[0]>22){
         QMessageBox msgBox;
         msgBox.setWindowTitle(tr("UPDATE AVAILABE"));
         msgBox.setTextFormat(Qt::RichText);   //this is what makes the links clickable
-        msgBox.setText("You can find new version on <a href='https://github.com/lilmuff2/X-coder/releases'>https://github.com/lilmuff2/X-coder/releases</a>");
+        msgBox.setText(tr("You can find new version on <a href='https://github.com/lilmuff2/X-coder/releases'>https://github.com/lilmuff2/X-coder/releases</a>"));
         QPushButton *btn = msgBox.addButton(tr("UPDATE"), QMessageBox::ActionRole);
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.exec();
@@ -88,18 +93,19 @@ void MainWindow::on_About_clicked()
     QMessageBox msgBox;
     msgBox.setWindowTitle(tr("ABOUT"));
     msgBox.setTextFormat(Qt::RichText);   //this is what makes the links clickable
-    msgBox.setText("Author: <a href='tg://resolve?domain=lilmuff1'>lilmuff1</a>\n<br>THX FOR HELP: <a href='https://github.com/Daniil-SV'>Danil SV</a>"
+    msgBox.setText(tr("Author: <a href='tg://resolve?domain=lilmuff1'>lilmuff1</a>\n<br>THX FOR HELP: <a href='https://github.com/Daniil-SV'>Danil SV</a>"
                    "<br>DISCORD: <a href='https://discord.com/invite/yNajwpBe'>discord.com/invite/yNajwpBe</a>"
                    "<br>TG: <a href='tg://resolve?domain=XcoderBS'>t.me/XcoderBS</a>"
-                   "<br>GITHUB: <a href='https://github.com/lilmuff2/X-coder'>github.com/lilmuff2/X-coder</a>");
+                   "<br>GITHUB: <a href='https://github.com/lilmuff2/X-coder'>github.com/lilmuff2/X-coder</a>"));
     msgBox.setStandardButtons(QMessageBox::Ok);
     msgBox.exec();
 }
 
-
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
-    cfg->lang(langs[index]);
-    qApp->exit(69);
+    if(lanchanged){
+        cfg->lang(langs[index]);
+        qApp->exit(69);
+    }
 }
 

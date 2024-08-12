@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>507</width>
-    <height>917</height>
+    <height>905</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -155,8 +155,8 @@ border-radius: 10px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: none;
-border;
-border-color: none;</string>
+color: white;
+border: 0px;</string>
          </property>
          <property name="text">
           <string>DECODE</string>
@@ -184,15 +184,16 @@ border-color: none;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton:hover:!pressed
+            <string notr="true">QPushButton {color: white;}
+QPushButton:hover:!pressed
 {
-  background-color: rgba(255, 255,255, 70);
-  border: 2px solid rgba(252, 255, 255, 90);
+  background-color: rgba(255, 255,255, 80);
+  border: 2px solid rgba(252, 255, 255, 210);
 }
 QPushButton:pressed
 {
-  background-color: rgba(255, 255,255, 80);
-  border: 2px solid rgba(252, 255, 255, 100);
+  background-color: rgba(255, 255,255, 100);
+  border: 2px solid rgba(252, 255, 255, 220);
 }</string>
            </property>
            <property name="text">
@@ -215,15 +216,16 @@ QPushButton:pressed
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton:hover:!pressed
+            <string notr="true">QPushButton {color: white;}
+QPushButton:hover:!pressed
 {
-  background-color: rgba(255, 255,255, 70);
-  border: 2px solid rgba(252, 255, 255, 90);
+  background-color: rgba(255, 255,255, 80);
+  border: 2px solid rgba(252, 255, 255, 210);
 }
 QPushButton:pressed
 {
-  background-color: rgba(255, 255,255, 80);
-  border: 2px solid rgba(252, 255, 255, 100);
+  background-color: rgba(255, 255,255, 100);
+  border: 2px solid rgba(252, 255, 255, 220);
 }</string>
            </property>
            <property name="text">
@@ -257,8 +259,8 @@ border-radius: 10px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: none;
-border;
-border-color: none;</string>
+color: white;
+border: 0px;</string>
          </property>
          <property name="text">
           <string>ENCODE</string>
@@ -288,15 +290,16 @@ border-color: none;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton:hover:!pressed
+            <string notr="true">QPushButton {color: white;}
+QPushButton:hover:!pressed
 {
-  background-color: rgba(255, 255,255, 70);
-  border: 2px solid rgba(252, 255, 255, 90);
+  background-color: rgba(255, 255,255, 80);
+  border: 2px solid rgba(252, 255, 255, 210);
 }
 QPushButton:pressed
 {
-  background-color: rgba(255, 255,255, 80);
-  border: 2px solid rgba(252, 255, 255, 100);
+  background-color: rgba(255, 255,255, 100);
+  border: 2px solid rgba(252, 255, 255, 220);
 }</string>
            </property>
            <property name="text">
@@ -319,15 +322,16 @@ QPushButton:pressed
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton:hover:!pressed
+            <string notr="true">QPushButton {color: white;}
+QPushButton:hover:!pressed
 {
-  background-color: rgba(255, 255,255, 70);
-  border: 2px solid rgba(252, 255, 255, 90);
+  background-color: rgba(255, 255,255, 80);
+  border: 2px solid rgba(252, 255, 255, 210);
 }
 QPushButton:pressed
 {
-  background-color: rgba(255, 255,255, 80);
-  border: 2px solid rgba(252, 255, 255, 100);
+  background-color: rgba(255, 255,255, 100);
+  border: 2px solid rgba(252, 255, 255, 220);
 }</string>
            </property>
            <property name="text">
@@ -361,8 +365,8 @@ border-radius: 10px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: none;
-border;
-border-color: none;</string>
+color: white;
+border: 0px;</string>
          </property>
          <property name="text">
           <string>LANGUAGE</string>
@@ -391,6 +395,7 @@ border-color: none;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QComboBox {
+    color:white;
     margin: 5px;
 }
 
@@ -437,15 +442,16 @@ QComboBox:editable {
        <string notr="true">QPushButton:hover:!pressed
 {
   background-color: rgba(255, 255,255, 100);
-  border: 2px solid rgba(252, 255, 255, 110);
+  border: 2px solid rgba(252, 255, 255, 210);
 }
 QPushButton:pressed
 {
   background-color: rgba(255, 255,255, 110);
-  border: 2px solid rgba(252, 255, 255, 120);
+  border: 2px solid rgba(252, 255, 255, 220);
 }
 QPushButton
 {
+  color: white;
   background-color: rgba(255, 255, 255,90);
   border: 2px solid rgba(252, 255, 255, 100);
   border-radius: 10px;

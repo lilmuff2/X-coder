@@ -17,9 +17,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    int CheckUpdates();
     Config *cfg;
     std::vector<QString> langs = {"en","ru"};
+    bool lanchanged = false;
+    int CheckUpdates();
 private slots:
     void BtnCLicked();
 

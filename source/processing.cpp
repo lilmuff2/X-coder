@@ -372,6 +372,7 @@ void Processing::encode(std::filesystem::path input_path, std::filesystem::path 
             file.stream.save_file(output_path, sig);
             file.stream.clear();
         }
+
     }
     catch (sc::GeneralRuntimeException& e) {
         print(tr("ERROR:"));

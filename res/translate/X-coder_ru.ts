@@ -20,55 +20,85 @@
         <translation>ДЕКОД</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="199"/>
+        <location filename="../../ui/mainwindow.ui" line="200"/>
         <source>FILE</source>
         <translation>ФАЙЛ</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="230"/>
+        <location filename="../../ui/mainwindow.ui" line="232"/>
         <source>FILES</source>
         <translation>ФАЙЛЫ</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="303"/>
+        <location filename="../../ui/mainwindow.ui" line="306"/>
         <source>FOLDER</source>
         <translation>ПАПКУ</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="264"/>
+        <location filename="../../ui/mainwindow.ui" line="266"/>
         <source>ENCODE</source>
         <translation>ЕНКОД</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="334"/>
+        <location filename="../../ui/mainwindow.ui" line="338"/>
         <source>FOLDERS</source>
         <translation>ПАПКИ</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="368"/>
+        <location filename="../../ui/mainwindow.ui" line="372"/>
         <source>LANGUAGE</source>
         <translation>ЯЗЫК</translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="409"/>
+        <location filename="../../ui/mainwindow.ui" line="414"/>
         <source>English</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="414"/>
+        <location filename="../../ui/mainwindow.ui" line="419"/>
         <source>Русский</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/mainwindow.ui" line="456"/>
-        <location filename="../../source/mainwindow.cpp" line="44"/>
+        <location filename="../../ui/mainwindow.ui" line="462"/>
+        <location filename="../../source/mainwindow.cpp" line="94"/>
         <source>ABOUT</source>
         <translation>ИНФО</translation>
     </message>
     <message>
-        <location filename="../../source/mainwindow.cpp" line="21"/>
+        <location filename="../../source/mainwindow.cpp" line="35"/>
         <source>en</source>
         <translation>ru</translation>
+    </message>
+    <message>
+        <location filename="../../source/mainwindow.cpp" line="58"/>
+        <location filename="../../source/mainwindow.cpp" line="70"/>
+        <source>UPDATE AVAILABE</source>
+        <translation>ДОСТУПНО ОБНОВЛЕНИЕ</translation>
+    </message>
+    <message>
+        <location filename="../../source/mainwindow.cpp" line="60"/>
+        <location filename="../../source/mainwindow.cpp" line="72"/>
+        <source>You can find new version on &lt;a href=&apos;https://github.com/lilmuff2/X-coder/releases&apos;&gt;https://github.com/lilmuff2/X-coder/releases&lt;/a&gt;</source>
+        <translation>Ты можешь найти новую версию на &lt;a href=&apos;https://github.com/lilmuff2/X-coder/releases&apos;&gt;https://github.com/lilmuff2/X-coder/releases&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../source/mainwindow.cpp" line="61"/>
+        <location filename="../../source/mainwindow.cpp" line="73"/>
+        <source>UPDATE</source>
+        <translation>ОБНОВИТЬ</translation>
+    </message>
+    <message>
+        <location filename="../../source/mainwindow.cpp" line="62"/>
+        <source>EXIT</source>
+        <translation>ВЫЙТИ</translation>
+    </message>
+    <message>
+        <location filename="../../source/mainwindow.cpp" line="96"/>
+        <source>Author: &lt;a href=&apos;tg://resolve?domain=lilmuff1&apos;&gt;lilmuff1&lt;/a&gt;
+&lt;br&gt;THX FOR HELP: &lt;a href=&apos;https://github.com/Daniil-SV&apos;&gt;Danil SV&lt;/a&gt;&lt;br&gt;DISCORD: &lt;a href=&apos;https://discord.com/invite/yNajwpBe&apos;&gt;discord.com/invite/yNajwpBe&lt;/a&gt;&lt;br&gt;TG: &lt;a href=&apos;tg://resolve?domain=XcoderBS&apos;&gt;t.me/XcoderBS&lt;/a&gt;&lt;br&gt;GITHUB: &lt;a href=&apos;https://github.com/lilmuff2/X-coder&apos;&gt;github.com/lilmuff2/X-coder&lt;/a&gt;</source>
+        <translation>Автор: &lt;a href=&apos;tg://resolve?domain=lilmuff1&apos;&gt;lilmuff1&lt;/a&gt;
+        &lt;br&gt;ПОМОГАЛ: &lt;a href=&apos;https://github.com/Daniil-SV&apos;&gt;Danil SV&lt;/a&gt;&lt;br&gt;DISCORD: &lt;a href=&apos;https://discord.com/invite/yNajwpBe&apos;&gt;discord.com/invite/yNajwpBe&lt;/a&gt;&lt;br&gt;TG: &lt;a href=&apos;tg://resolve?domain=XcoderBS&apos;&gt;t.me/XcoderBS&lt;/a&gt;&lt;br&gt;GITHUB: &lt;a href=&apos;https://github.com/lilmuff2/X-coder&apos;&gt;github.com/lilmuff2/X-coder&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -76,7 +106,7 @@
     <message>
         <location filename="../../ui/processing.ui" line="20"/>
         <location filename="../../ui/processing.ui" line="52"/>
-        <location filename="../../ui/processing.ui" line="430"/>
+        <location filename="../../ui/processing.ui" line="436"/>
         <source>DECODE</source>
         <translation>ДЕКОД</translation>
     </message>
@@ -87,7 +117,7 @@
     </message>
     <message>
         <location filename="../../ui/processing.ui" line="144"/>
-        <location filename="../../ui/processing.ui" line="250"/>
+        <location filename="../../ui/processing.ui" line="252"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -99,7 +129,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/processing.ui" line="260"/>
+        <location filename="../../ui/processing.ui" line="262"/>
         <source>OUT FOLDER (OPTIONALLY)</source>
         <translation>ВЫХОДНЯ ПАПКА (ОПЦИОНАЛЬНО)</translation>
     </message>
@@ -109,19 +139,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>ВХОДНОЙ ФАЙЛ</translation>
     </message>
     <message>
-        <location filename="../../ui/processing.ui" line="186"/>
-        <location filename="../../ui/processing.ui" line="292"/>
+        <location filename="../../ui/processing.ui" line="188"/>
+        <location filename="../../ui/processing.ui" line="296"/>
         <source>SELECT</source>
         <translation>ВЫБРАТЬ</translation>
     </message>
     <message>
-        <location filename="../../ui/processing.ui" line="388"/>
+        <location filename="../../ui/processing.ui" line="392"/>
         <location filename="../../source/processing.cpp" line="190"/>
         <source>CONSOLE:</source>
         <translation>КОНСОЛЬ: </translation>
     </message>
     <message>
-        <location filename="../../ui/processing.ui" line="456"/>
+        <location filename="../../ui/processing.ui" line="464"/>
         <source>CLOSE</source>
         <translation>ЗАКРЫТЬ</translation>
     </message>
@@ -247,7 +277,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 <context>
     <name>QTranslator</name>
     <message>
-        <location filename="../../source/main.cpp" line="40"/>
+        <location filename="../../source/main.cpp" line="32"/>
         <source>en</source>
         <translation>ru</translation>
     </message>

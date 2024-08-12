@@ -13,7 +13,7 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Qml LinguistTools)
 
 
-set(TS_FILES res/translate/X-coder_ru.ts res/translate/X-coder_any.ts)
+set(TS_FILES res/translate/X-coder_ru.ts)
 set(PROJECT_SOURCES
         source/main.cpp
         source/mainwindow.cpp
@@ -82,7 +82,13 @@ qt6_add_translations(X-coder
     TS_FILES ${TS_FILES}
     QM_FILES_OUTPUT_VARIABLE qm_files)
 #install(FILES ${qm_files} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
-
+if (ANDROID)
+    include(C:/DEV/ANDROID/SDK/android_openssl/android_openssl.cmake)
+    add_android_openssl_libraries(X-coder)
+    set_property (TARGET X-coder APPEND PROPERTY
+        QT_ANDROID_EXTRA_LIBS "C:/DEV/ANDROID/SDK/android_openssl/ssl_3/arm64-v8a/libcrypto_3.so" "C:/DEV/ANDROID/SDK/android_openssl/ssl_3/arm64-v8a/libssl_3.so" "C:/DEV/ANDROID/SDK/android_openssl/ssl_3/armeabi-v7a/libcrypto_3.so" "C:/DEV/ANDROID/SDK/android_openssl/ssl_3/armeabi-v7a/libssl_3.so"
+    )
+endif()
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(X-coder)
 endif()
